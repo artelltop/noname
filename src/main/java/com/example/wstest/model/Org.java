@@ -1,6 +1,13 @@
 package com.example.wstest.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="org")
 public class Org {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int oid;
     private String orginformation;
 

@@ -1,7 +1,16 @@
 package com.example.wstest.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="classify")
 public class Classify {//帖子类别
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int cid;//类别id
+
     private String classname;//类别名
 
     public int getCid() {

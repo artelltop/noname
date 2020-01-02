@@ -1,6 +1,14 @@
 package com.example.wstest.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="users")
 public class Users {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int uid;
 
     private String phone;

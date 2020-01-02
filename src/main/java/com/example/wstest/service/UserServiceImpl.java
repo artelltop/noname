@@ -1,9 +1,11 @@
 package com.example.wstest.service;
 
 import com.example.wstest.model.Users;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService{
 
     @Override

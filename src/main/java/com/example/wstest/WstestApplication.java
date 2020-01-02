@@ -13,9 +13,12 @@ public class WstestApplication {
 
 }*/
 
+        import com.example.wstest.dao.basedao.BaseRepositoryFactoryBean;
+        import org.mybatis.spring.annotation.MapperScan;
         import org.springframework.boot.SpringApplication;
         import org.springframework.boot.autoconfigure.SpringBootApplication;
         import org.springframework.context.annotation.Bean;
+        import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         import org.springframework.web.socket.config.annotation.EnableWebSocket;
         import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
@@ -24,8 +27,11 @@ public class WstestApplication {
 /**
  * @author Levin
  */
+@EnableJpaRepositories(basePackages = ("com.example"),
+        repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)
 @EnableWebSocket
 @SpringBootApplication
+@MapperScan("com.example.wstest.dao")
 public class WstestApplication {
 
     public static void main(String[] args) {

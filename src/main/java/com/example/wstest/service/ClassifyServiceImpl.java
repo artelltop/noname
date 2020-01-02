@@ -1,14 +1,14 @@
 package com.example.wstest.service;
 
-import com.example.wstest.model.Posts;
+import com.example.wstest.model.Classify;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PostsServiceImpl implements PostsService {
+public class ClassifyServiceImpl implements ClassifyService {
     @Override
-    public void add(Posts posts) {
+    public void add(Classify classify) {
 
     }
 
@@ -18,12 +18,12 @@ public class PostsServiceImpl implements PostsService {
     }
 
     @Override
-    public Posts update(Posts posts) {
+    public Classify update(Classify classify) {
         return null;
     }
 
     @Override
-    public List<Posts> list() {
+    public List<Classify> list() {
         return null;
     }
 }
