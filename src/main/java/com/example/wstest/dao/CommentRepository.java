@@ -1,8 +1,8 @@
 package com.example.wstest.dao;
 
 import com.example.wstest.dao.basedao.BaseRepository;
-import com.example.wstest.model.Org;
+import com.example.wstest.model.Comment;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface OrgRepository extends BaseRepository<Org,Integer>, JpaSpecificationExecutor<Org> {
+public interface CommentRepository extends BaseRepository<Comment,Integer>, JpaSpecificationExecutor<Comment> {
 }
