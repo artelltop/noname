@@ -1,16 +1,16 @@
 package com.example.wstest.model;
 
+
+
 import javax.persistence.*;
-import javax.xml.crypto.Data;
 import java.util.Date;
 
-
 @Entity
-@Table(name="posts")
+@Table(name = "posts")
 public class Posts {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "posts_pid")
+    @TableGenerator(name = "posts_pid", initialValue = 0,allocationSize = 1, table = "seq_table")
     private int pid;
     private int uid;
     private Date time;

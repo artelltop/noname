@@ -5,11 +5,11 @@ import javax.xml.crypto.Data;
 import java.util.Date;
 
 @Entity
-@Table(name="comment")
+@Table(name = "comment")
 public class Comment {//评论
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "comment_comid")
+    @TableGenerator(name = "comment_comid", initialValue = 0,allocationSize = 1, table = "seq_table")
     private int comid;//评论id
     private int uid;//评论者id
     private Date time;//时间
