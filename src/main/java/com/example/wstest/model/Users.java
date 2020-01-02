@@ -18,7 +18,7 @@ public class Users {
 
     private boolean authentication;
 
-    private String orgid;
+    private int orgid;
 
     private String information;
 
@@ -62,11 +62,11 @@ public class Users {
         this.authentication = authentication;
     }
 
-    public String getOrgid() {
+    public int getOrgid() {
         return orgid;
     }
 
-    public void setOrgid(String orgid) {
+    public void setOrgid(int orgid) {
         this.orgid = orgid;
     }
 
