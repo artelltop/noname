@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface PostsRepository extends BaseRepository<Posts,Integer>, JpaSpecificationExecutor<Posts> {
 
-    public void deleteByPid(int pid);
+
 }

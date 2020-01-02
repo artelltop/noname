@@ -20,7 +20,7 @@ public class PostsServiceImpl implements PostsService {
 
     @Override
     public void delete(int pid) {
-        PostsRepository.deleteByPid(pid);
+        PostsRepository.deleteById(pid);
     }
 
     @Override

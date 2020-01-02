@@ -26,11 +26,13 @@ class PostsServiceImplTest {
         posts.setContent("wdnmd4");
         posts.setOid(4);
         posts.setUid(4);
-        postsRepository.save(posts);
+        posts.setTime(new Date());
+        postsService.add(posts);
     }
 
     @Test
     void delete() {
+        postsService.delete(2);
     }
 
     @Test
