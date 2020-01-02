@@ -17,7 +17,7 @@ public class BaseRepositoryImpl<T, ID extends Serializable>
         super(domainClass, entityManager);
         this.entityManager = entityManager;
     }
-/*
+
     //通过EntityManager来完成查询
 //    @SuppressWarnings("unchecked")
     @SuppressWarnings("unchecked")
@@ -49,5 +49,5 @@ public class BaseRepositoryImpl<T, ID extends Serializable>
 
         }
         query.executeUpdate();
-    }*/
+    }
 }

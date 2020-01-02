@@ -10,9 +10,9 @@ public interface PostsService {
     public void add(Posts posts);
 
     //删帖
-    public void delete(int id);
+    public void delete(int pid);
 
-    //更新帖子
+    //编辑帖子
     public Posts update(Posts posts);
 
     //帖子列表
