@@ -1,8 +1,8 @@
 package com.example.wstest.model;
 
-public class Classify {
-    private int cid;
-    private String classname;
+public class Classify {//帖子类别
+    private int cid;//类别id
+    private String classname;//类别名
 
     public int getCid() {
         return cid;

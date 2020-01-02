@@ -3,19 +3,19 @@ package com.example.wstest.model;
 import javax.xml.crypto.Data;
 
 public class Posts {
-    private int id;
+    private int pid;
     private int uid;
     private Data time;
     private int oid;
     private int cid;
     private String content;
 
-    public int getId() {
-        return id;
+    public int getPid() {
+        return pid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPid(int pid) {
+        this.pid = pid;
     }
 
     public int getUid() {
