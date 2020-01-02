@@ -1,6 +1,13 @@
 package com.example.wstest.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class Users {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "users_uid")
+    @TableGenerator(name = "users_uid", initialValue = 0, allocationSize = 1,table = "seq_table")
     private int uid;
 
     private String phone;

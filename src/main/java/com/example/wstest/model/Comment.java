@@ -1,11 +1,18 @@
 package com.example.wstest.model;
 
+import javax.persistence.*;
 import javax.xml.crypto.Data;
+import java.util.Date;
 
+@Entity
+@Table(name = "comment")
 public class Comment {//评论
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "comment_comid")
+    @TableGenerator(name = "comment_comid", initialValue = 0,allocationSize = 1, table = "seq_table")
     private int comid;//评论id
     private int uid;//评论者id
-    private Data time;//时间
+    private Date time;//时间
     private String content;//内容
     private int pid;//帖子id
 
@@ -25,11 +32,11 @@ public class Comment {//评论
         this.uid = uid;
     }
 
-    public Data getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Data time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

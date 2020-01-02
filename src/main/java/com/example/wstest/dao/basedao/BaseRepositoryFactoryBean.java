@@ -23,7 +23,7 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T,
         super(repositoryInterface);
     }
 
-    @Override
+    /*@Override
     protected RepositoryFactorySupport createRepositoryFactory(EntityManager em) {
         return new BaseRepositoryFactory(em);
     }
@@ -39,11 +39,11 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T,
             this.em = em;
         }
 
-       /* //设置具体的实现类是BaseRepositoryImple
+       *//* //设置具体的实现类是BaseRepositoryImple
         @Override
         protected Object getTargetRepository(RepositoryInformation information) {
             return new BaseRepositoryImpl<T, I>((Class<T>) information.getDomainType(), em);
-        }*/
+        }*//*
 
 
         @Override
@@ -56,5 +56,5 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T,
         protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
             return BaseRepositoryImpl.class;
         }
-    }
+    }*/
 }

@@ -1,11 +1,19 @@
 package com.example.wstest.model;
 
-import javax.xml.crypto.Data;
 
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "posts")
 public class Posts {
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "posts_pid")
+    @TableGenerator(name = "posts_pid", initialValue = 0,allocationSize = 1, table = "seq_table")
     private int pid;
     private int uid;
-    private Data time;
+    private Date time;
     private int oid;
     private int cid;
     private String content;
@@ -26,11 +34,11 @@ public class Posts {
         this.uid = uid;
     }
 
-    public Data getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Data time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 
