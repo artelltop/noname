@@ -20,14 +20,14 @@ public class UserController {
     public List<Users> list(){
         return userService.list();
     }
-    //添加用户
+    //注册用户
     @PostMapping("add")
     public void add(Users users){
         userService.add(users);
     }
     //修改用户
-    @PostMapping(value = "{id}/update")
-    public void update(@PathVariable("id") int id,Users users){
+    @PostMapping(value = "{uid}/update")
+    public void update(@PathVariable("uid") int id,Users users){
         userService.add(users);
     }
 
