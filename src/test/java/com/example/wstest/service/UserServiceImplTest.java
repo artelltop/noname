@@ -19,12 +19,18 @@ class UserServiceImplTest {
     @Test
      void add() {
         Users users = new Users();
-        users.setPhone("13882238627");
+        users.setPhone("132238627");
         users.setAuthentication(true);
         users.setInformation("2");
         users.setNickname("zzw2");
         users.setOrgid(0);
-        users.setPassword("1234567");
+        users.setPassword("14567");
         userService.add(users);
+    }
+
+    @Test
+    void delete() {
+        userService.delete(1);
+
     }
 }

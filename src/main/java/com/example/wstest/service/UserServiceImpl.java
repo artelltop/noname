@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void delete(int uid) {
-
+        usersRepository.deleteById(uid);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<Users> list() {
-        return null;
+        return usersRepository.findAll();
     }
 
     @Override
