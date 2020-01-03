@@ -30,6 +30,7 @@ public class PostsServiceImpl implements PostsService {
 
     @Override
     public List<Posts> list() {
-        return null;
+        return PostsRepository.findAll();
+
     }
 }

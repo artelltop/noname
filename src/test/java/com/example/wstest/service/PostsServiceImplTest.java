@@ -23,9 +23,9 @@ class PostsServiceImplTest {
     void add() {
         Posts posts = new Posts();
         posts.setCid(4);
-        posts.setContent("wdnmd4");
+        posts.setContent("wd113312");
         posts.setOid(4);
-        posts.setUid(4);
+        posts.setUid(2);
         posts.setTime(new Date());
         postsService.add(posts);
     }
