@@ -5,12 +5,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.wstest.model.Users;
 import com.example.wstest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
+@CrossOrigin
 @RestController
 @RequestMapping("login")
 public class LoginController {
@@ -19,7 +21,7 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping
-    public String login(String phone, String password, HttpSession session){
+    public JSONObject login(String phone, String password, HttpSession session){
         JSONObject jsonObject = new JSONObject();
         Users users = new Users();
         users = userService.login(phone,password);
@@ -30,6 +32,6 @@ public class LoginController {
         }else {
             jsonObject.put("msg","登录失败");
         }
-        return jsonObject.toString();
+        return jsonObject;
     }
 }
