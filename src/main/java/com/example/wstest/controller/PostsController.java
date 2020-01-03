@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/posts")
 public class PostsController {
@@ -53,7 +53,16 @@ public class PostsController {
         postsService.add(posts);
     };
 
+    @PostMapping("/delete")
+    private void delete(int pid){
+        postsService.delete(pid);
+    }
 
+    @GetMapping("/update")
+    private Posts update(Posts posts){
+        postsService.update(posts);
+        return posts;
+    };
 
 
 }

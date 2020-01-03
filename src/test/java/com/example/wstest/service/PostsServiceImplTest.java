@@ -32,7 +32,7 @@ class PostsServiceImplTest {
 
     @Test
     void delete() {
-        postsService.delete(2);
+        postsService.delete(24);
     }
 
     @Test

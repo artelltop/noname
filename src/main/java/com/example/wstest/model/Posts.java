@@ -3,6 +3,7 @@ package com.example.wstest.model;
 
 
 import javax.persistence.*;
+import java.nio.file.Path;
 import java.util.Date;
 
 @Entity
