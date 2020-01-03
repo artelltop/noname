@@ -24,13 +24,20 @@ public class PostsServiceImpl implements PostsService {
     }
 
     @Override
-    public Posts update(Posts posts) {
-        return null;
+    public void update(int pid,String content) {
+        Posts posts = PostsRepository.findByPid(pid);
+        posts.setContent(content);
+        PostsRepository.save(posts);
     }
 
     @Override
     public List<Posts> list() {
         return PostsRepository.findAll();
 
+    }
+
+    @Override
+    public Posts findbypid(int pid) {
+        return PostsRepository.findByPid(pid);
     }
 }

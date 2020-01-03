@@ -22,4 +22,5 @@ public interface PostsRepository extends BaseRepository<Posts,Integer>, JpaSpeci
     /*@Query(value="select u.authentication from users u,posts p where u.uid=1?",nativeQuery=true)
     public List<String> findAuthenticationByuid(int uid);*/
 
+    public Posts findByPid(int pid);
 }

@@ -1,8 +1,7 @@
 package com.example.wstest.controller;
 
 
-import com.example.wstest.dao.PostsRepository;
-import com.example.wstest.dao.UsersRepository;
+
 import com.example.wstest.model.Posts;
 import com.example.wstest.model.Users;
 import com.example.wstest.model.classs.PU;
@@ -58,10 +57,16 @@ public class PostsController {
         postsService.delete(pid);
     }
 
-    @GetMapping("/update")
-    private Posts update(Posts posts){
-        postsService.update(posts);
-        return posts;
+    //获取原本内容
+    @GetMapping("{pid}/update")
+    private String update(@PathVariable int pid){
+        String s = postsService.findbypid(pid).getContent();
+        return s;
+    };
+    //修改保存
+    @PostMapping("{pid}/update")
+    private void update(@PathVariable int pid, String content){
+        postsService.update(pid,content);
     };
 
 

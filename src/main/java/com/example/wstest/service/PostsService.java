@@ -13,9 +13,11 @@ public interface PostsService {
     public void delete(int pid);
 
     //编辑帖子
-    public Posts update(Posts posts);
+    public void update(int pid,String comment);
 
     //帖子列表
     public List<Posts> list();
+
+    public Posts findbypid(int pid);
 
 }
