@@ -17,6 +17,8 @@ public class PU {
     private Date time;
     private int oid;
 
+    public PU(){}
+
     public PU(String nickname, boolean authentication, int uid, int pid, Date time, int oid, int cid, String content) {
         this.nickname = nickname;
         this.authentication = authentication;

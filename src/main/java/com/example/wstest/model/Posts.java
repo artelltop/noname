@@ -65,4 +65,16 @@ public class Posts {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "Posts{" +
+                "pid=" + pid +
+                ", uid=" + uid +
+                ", time=" + time +
+                ", oid=" + oid +
+                ", cid=" + cid +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }

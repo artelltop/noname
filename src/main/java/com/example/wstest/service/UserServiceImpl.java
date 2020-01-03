@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Users findByUsername(String phone) {
+    public Users findByphone(String phone) {
         return null;
     }
 
@@ -50,5 +50,10 @@ public class UserServiceImpl implements UserService{
             return users = null;
         }
         return null;
+    }
+
+    @Override
+    public Users findByUid(int uid) {
+        return usersRepository.findByUid(uid);
     }
 }

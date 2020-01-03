@@ -7,13 +7,11 @@ import com.example.wstest.model.Posts;
 import com.example.wstest.model.Users;
 import com.example.wstest.model.classs.PU;
 import com.example.wstest.service.PostsService;
+import com.example.wstest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,49 +24,36 @@ public class PostsController {
     private PostsService postsService;
 
     @Autowired
-    private PostsRepository postsRepository;
-
-    @Autowired
-    private UsersRepository usersRepository;
+    private UserService userService;
 
     @GetMapping("/list")
     public List list(){
-        List list = new ArrayList();
-        List list1 = postsService.list();
-        for(Object a : list1) {
-
-            list.add(a);
-            list.add("alskskhajks");
-        }
-        return list;
-    }
-
-    @GetMapping("/list2")
-    public PU asd(){
-        List<PU> list3 = null;
+        List<PU> list3 = new ArrayList<>();
         List<Posts> list = postsService.list();
-        /*for (Posts i:list){
-            Users users = usersRepository.findByUid(i.getUid());
+        for (Posts i:list){
+            Users users = userService.findByUid(i.getUid());
             if (users == null) continue;
-            PU pu = new PU(users.getNickname(),users.isAuthentication(),i.getUid(),i.getPid(),i.getTime(),i.getOid(),i.getCid(),i.getContent());
-            PU pu = new PU("小苏打",true,1,1,new Date(),1,1,"哈哈哈哈");
+            PU pu = new PU();
+            pu.setNickname(users.getNickname());
+            pu.setAuthentication(users.isAuthentication());
+            pu.setUid(i.getUid());
+            pu.setPid(i.getPid());
+            pu.setTime(i.getTime());
+            pu.setOid(i.getOid());
+            pu.setCid(i.getCid());
+            pu.setContent(i.getContent());
             list3.add(pu);
-            System.out.println(i.getUid()+i.getContent());
-        }*/
-        //PU pu = new PU("小苏打",true,1,1,new Date(),1,1,"哈哈哈哈");
-        PU pu = null;
-        pu.setNickname("dedaw");
-        //list3.add(pu);
-        return pu;
+        }
+        return list3;
     }
 
+    @PostMapping("/add")
+    private void add(Posts posts){
+        posts.setTime(new Date());
+        postsService.add(posts);
+    };
 
-    @GetMapping("/list3")
-    public Users asd3(){
-        List<PU> list3 = null;
-        List<Posts> list1 = postsService.list();
-        Users users = usersRepository.findByUid(5);
 
-        return users;
-    }
+
+
 }
