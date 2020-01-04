@@ -20,7 +20,7 @@ public class UserController {
     public List<Users> list(){
         return userService.list();
     }
-    //注册用户
+    //添加用户
     @PostMapping("add")
     public void add(Users users){
         userService.add(users);
@@ -32,8 +32,8 @@ public class UserController {
     }
 
     //删除用户
-    public void delete(@PathVariable("id") int id){
-        userService.delete(id);
+    public void delete(@PathVariable("uid") int uid){
+        userService.delete(uid);
     }
 
 }
