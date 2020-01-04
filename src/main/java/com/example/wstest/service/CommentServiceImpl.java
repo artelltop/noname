@@ -1,20 +1,26 @@
 package com.example.wstest.service;
 
+import com.example.wstest.dao.CommentRepository;
 import com.example.wstest.model.Comment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CommentServiceImpl implements CommentService {
+    @Autowired
+    private CommentRepository commentRepository;
+
+
     @Override
     public void add(Comment comment) {
-
+        commentRepository.save(comment);
     }
 
     @Override
-    public void delete(int id) {
-
+    public void delete(int comid) {
+        commentRepository.delete(commentRepository.findByComid(comid));
     }
 
     @Override
@@ -23,7 +29,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> list() {
-        return null;
+    public List<Comment> list(int pid) {
+        return commentRepository.findAllByPid(pid);
+    }
+
+    @Override
+    public Comment findByComid(int comid) {
+        return commentRepository.findByComid(comid);
     }
 }
